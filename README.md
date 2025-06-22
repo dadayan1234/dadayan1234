@@ -41,14 +41,14 @@
 
 ### 🏆 Top Repositories
 
-*(Bagian ini akan diisi otomatis oleh GitHub Actions setelah beberapa saat)*
+
 ---
 
 📊 **GitHub Stats:**
 
-[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=dadayn1234&show_icons=true&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
+[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=dadayan1234&show_icons=true&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
 
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=dadayn1234&layout=compact&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=dadayan1234&layout=compact&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
 
 ---
 

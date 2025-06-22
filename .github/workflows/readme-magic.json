@@ -1,0 +1,14 @@
+{
+  "repository": {
+    "username": "dadayn1234",  // Ganti dengan username GitHub kamu
+    "type": "owner",             // Untuk repository milikmu sendiri
+    "sort": "stars",             // Urutkan berdasarkan jumlah bintang
+    "limit": 5                   // Tampilkan 5 repository teratas
+  },
+  "sections": {
+    "repositories": {
+      "header": "### 🏆 Top Repositories",
+      "footer": "<a href=\"https://github.com/dadayan1234?tab=repositories\"><sub>Lihat semua repository</sub></a>" // Ganti username
+    }
+  }
+}

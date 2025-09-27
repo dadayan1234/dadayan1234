@@ -2,28 +2,28 @@ name: Display Top Repositories
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Menjalankan setiap hari pada pukul 00:00 UTC
-  workflow_dispatch: # Memungkinkan menjalankan secara manual dari GitHub UI
+    - cron: '0 0 * * *' # Runs every day at midnight
+  workflow_dispatch:
 
 jobs:
-  update-readme:
+  display_repos:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
-      - name: Update README.md with Top Repos
-        uses: jaywcjlove/github-readme-magic@v1.6.0
-        with:
-          # Pastikan path ini benar jika kamu ingin menggunakan config file terpisah
-          config_file: .github/workflows/readme-magic.json
-          readme_file: README.md
-          gh_token: ${{ secrets.GITHUB_TOKEN }} # Token otomatis GitHub untuk otentikasi
+      - name: Display top repositories
+        run: |
+          echo "## Top Repositories" >> README.md
+          echo "" >> README.md
+          gh repo list <your-github-username> --limit 5 --json name,description,url | jq -r '.[] | "* [" + .name + "](" + .url + "): " + .description' >> README.md
+          echo "" >> README.md
+          echo "Last updated: $(date)" >> README.md
 
       - name: Commit and push changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "docs: Update top repositories in README"
-          # Pastikan branch default kamu (main atau master) sesuai
-          branch: main
-          push_options: "--force" # Gunakan ini jika ada masalah push, tapi hati-hati
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git commit -m "Update README with top repositories"
+          git push
